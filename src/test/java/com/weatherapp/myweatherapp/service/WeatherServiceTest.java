@@ -44,7 +44,7 @@ class WeatherServiceTest {
         conditions2.setPreciptype(null); // City 2 is not raining
         city2.setCurrentConditions(conditions2);
 
-        // ✅ Use lenient() to prevent UnnecessaryStubbingException
+        // Use lenient() to prevent UnnecessaryStubbingException
         lenient().when(weatherRepo.getByCity("London")).thenReturn(city1);
         lenient().when(weatherRepo.getByCity("Paris")).thenReturn(city2);
     }
